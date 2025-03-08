@@ -1,9 +1,10 @@
 # Group "CNNO1"
 
 ## Members
-- s338219 DENG LAN
-- s337108 ZHANG XIAOYU
 - s339443 WANG YUNBO
+- s337108 ZHANG XIAOYU
+- s338219 DENG LAN
+
 
 # Exercise "Rescuing Surplus Food"
 
