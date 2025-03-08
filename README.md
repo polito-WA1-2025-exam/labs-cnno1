@@ -1,11 +1,11 @@
-# Group "GROUP NAME"
+# Group "CNNO1"
 
 ## Members
 - s338219 DENG LAN
 - s337108 ZHANG XIAOYU
 - s339443 WANG YUNBO
 
-# Exercise "NAME OF EXERCISE"
+# Exercise "Rescuing Surplus Food"
 
 # Lab Journal
 
