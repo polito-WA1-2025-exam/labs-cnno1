@@ -1,19 +1,12 @@
 
 const dayjs = require('dayjs');
 const Container = require('./model/container'); // Container 定义在 models/Container
-const Store = require('./model/class');
-const Bag = require('./model/class');
-const User = require('./model/class');
-const Reservation = require('./model/class');
-
-const BagType = require('./model/class');
-const BagSize = require('./model/class');
-const BagState = require('./model/class');
+const {Store, Bag, User, ShoppingCart, Reservation ,BagType, BagSize, BagState } = require('./model/class');
 // 创建容器实例
-const store = Object.create(Container);
-const bags = Object.create(Container);
-const users = Object.create(Container);
-const reservations = Object.create(Container);
+const store = new Container();
+const bags = new Container();
+const users = new Container();
+const reservations = new Container();
 
 // 填充数据
 function populateData() {
@@ -45,17 +38,15 @@ function populateData() {
 
 
 function displayData() {
-  console.log('=== store ===');
-  console.log(store.items[0]);
-  console.log('==================test==============')
+  
   store.sortBy('name');
   store.items.forEach(e => {
-    console.log(`ID: ${e.id}, Name: ${e.userId}, Address: ${e.address}, Phone: ${e.phoneNumber}, Category: ${e.category}`);
+    console.log(`ID: ${e.id}, Name: ${e.name}, Address: ${e.address}, Phone: ${e.phoneNumber}, Category: ${e.category}`);
   });
 
   console.log('\n=== Bags ===');
   bags.items.forEach(b => {
-    console.log(`ID: ${b.id}, Type: ${b.type}, Size: ${b.size}, Price: ${b.price}, Store ID: ${b.StoreId}`);
+    console.log(`ID: ${b.id}, Type: ${b.type}, Size: ${b.size}, Price: ${b.price}, Store ID: ${b.storeId}`);
     if (b.type === BagType.REGULAR) console.log(`Contents: ${JSON.stringify(b.contents)}`);
     console.log(`Pickup Time: ${b.pickupTimeRange.start} to ${b.pickupTimeRange.end}, Valid: ${b.isPickupTimeValid()}`);
   });
